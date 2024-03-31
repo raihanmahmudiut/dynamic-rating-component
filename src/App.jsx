@@ -11,8 +11,8 @@ import {
 	extendTheme,
 } from "@chakra-ui/react";
 import RatingField from "./rating";
+import { FaHeart, FaStar } from "react-icons/fa";
 
-// Extend the default Chakra UI theme to customize body background color
 const theme = extendTheme({
 	styles: {
 		global: {
@@ -42,11 +42,20 @@ function App() {
 				alignItems="center"
 			>
 				<Box width="400px">
-					<HStack>
+					<HStack spacing={"5rem"}>
 						<Text textColor={"white"} fontSize={"1.5rem"}>
 							Ratings
 						</Text>
-						<RatingField currentRating={currentRating} color="yellow.400" />
+						<RatingField
+							currentRating={currentRating}
+							color="red.400"
+							icon={FaStar}
+						/>
+						<RatingField
+							currentRating={currentRating}
+							color="red.400"
+							icon={FaHeart}
+						/>
 					</HStack>
 					<FormControl mt={4}>
 						<FormLabel textColor={"white"} fontSize={"2rem"}>
