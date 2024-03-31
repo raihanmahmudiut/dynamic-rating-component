@@ -21,7 +21,6 @@ const RatingField = ({ currentRating, color }) => {
 				<Icon
 					as={FaStar}
 					color={color}
-					boxSize={5}
 					style={{
 						clipPath: `polygon(0 0, ${remainingRating * 100}% 0, ${
 							remainingRating * 100

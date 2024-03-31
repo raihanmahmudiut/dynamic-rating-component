@@ -8,8 +8,20 @@ import {
 	Container,
 	Text,
 	HStack,
+	extendTheme,
 } from "@chakra-ui/react";
 import RatingField from "./rating";
+
+// Extend the default Chakra UI theme to customize body background color
+const theme = extendTheme({
+	styles: {
+		global: {
+			body: {
+				bg: "black",
+			},
+		},
+	},
+});
 
 function App() {
 	const [currentRating, setCurrentRating] = useState(0);
@@ -21,7 +33,7 @@ function App() {
 	};
 
 	return (
-		<ChakraProvider>
+		<ChakraProvider theme={theme}>
 			<Container
 				width="100%"
 				height="100vh"
@@ -31,13 +43,18 @@ function App() {
 			>
 				<Box width="400px">
 					<HStack>
-						<Text>Ratings</Text>
+						<Text textColor={"white"} fontSize={"1.5rem"}>
+							Ratings
+						</Text>
 						<RatingField currentRating={currentRating} color="yellow.400" />
 					</HStack>
 					<FormControl mt={4}>
-						<FormLabel>Enter current rating</FormLabel>
+						<FormLabel textColor={"white"} fontSize={"2rem"}>
+							Enter current rating
+						</FormLabel>
 						<Input
 							type="number"
+							textColor={"white"}
 							placeholder="Enter current rating"
 							value={inputRating}
 							onChange={handleRatingChange}
